@@ -1,0 +1,2 @@
+# RUN 명령의 다양한 실행 형식 예제 도커파일 빌드 명령어
+docker build -t run-sample -f RunSampleDockerfile .
