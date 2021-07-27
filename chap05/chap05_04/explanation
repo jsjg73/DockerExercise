@@ -1,0 +1,7 @@
+명령 실행(RUN 명령)
+Shell 형식 또는 Exec 형식
+Shell 형식의 기본은 /bin/sh에서 실행
+
+Exec형식은 명시적으로 /bin/bash로 지정도 가능
+
+두 형식으로 RUN명령을 실행해는 도커 파일 예제 : RunSampleDockerfile
