@@ -1,0 +1,9 @@
+#도커파일 베이스 이미지 설정 명령 예시
+FROM centos:centos7
+
+#다이제스트 확인
+docker image ls --digests centos
+
+#다이제스트 지정한 Dockerfile
+FROM centos@sha256:125cd3..........
+
