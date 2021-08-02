@@ -1,0 +1,20 @@
+#Ubuntu17.10을 베이스 이미지로 하여 웹 서버의 실행 환경을 작성
+#RUN 명령으로 Nginx를 설치
+#데몬을 실행하도록 CMD 명령을 지정
+#웹 콘텐츠를 특정 경로에 배치하는 ONBUILD 명령 지정
+
+#베이스 이미지 설정
+FROM ubuntu:latest
+
+#Nginx 설치
+RUN apt-get -y update && apt-get -y upgrade
+RUN apt-get -y install nginx
+
+#포트 지정
+EXPOSE 80
+
+#웹 콘텐츠 배치
+ONBUILD ADD website.tar /var/www/html
+
+#Nginx 실행
+CMD ["nginx", "-g" ,"daemon off;"]

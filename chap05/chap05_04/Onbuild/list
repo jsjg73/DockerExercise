@@ -1,0 +1,11 @@
+#베이스 이미지 빌드
+docker build -t web-base -f Dockerfile.base .
+
+#웹 서버용 이미지 빌드
+docker build -t photoview-image .
+
+#웹 서버용 컨테이너 시작
+docker container run -d -p 80:80 photoview-image
+
+#이미지의 상세정보 확인, ONBUILD 설정 유무
+docker image inspect --format="{{ .Config.OnBuild}}" web-base

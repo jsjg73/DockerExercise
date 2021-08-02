@@ -4,4 +4,22 @@ Shell 형식의 기본은 /bin/sh에서 실행
 
 Exec형식은 명시적으로 /bin/bash로 지정도 가능
 
-두 형식으로 RUN명령을 실행해는 도커 파일 예제 : RunSampleDockerfile
+두 형식으로 RUN명령을 실행해는 도커 파일 예제 : RunSampleDockerfil
+
+
+<<데몬 실행(CMD 명령)>>
+앞선 RUN 명령은 이미지를 작성하기 위해 실행하는 명령을 기술
+CMD 명령은 이미지를 바탕으로 생성된 컨테이너 안에서 실행하기 위한 명령을 기술
+** 도커파일 안에는 하나의 CMD 명령을 기술할 수 있다.
+
+웹 서버를 가동시키는 예제에서, Nginx를 설치하는 명령은 Run, 설치한 Nginx를 데몬으로서
+컨테이너 안에서 상시 작동시키는 명령은 CMD
+
+방법1 : Exec 형식으로 기술
+CMD ["nginx", "-g", "daemon off;"]
+
+방법2: Shell 형식으로 기술
+CMD nginx -g 'daemon off;'
+
+방법3: ENTRYPOINT 명령의 파라미터로 기술
+추후 설명, list 파일 확인
