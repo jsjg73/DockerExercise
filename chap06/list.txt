@@ -1,0 +1,18 @@
+사전 준비 : 챕터 5의 ONBUILD예제에서 웹 서버용 이미지인 'photoview-image'를 작성해야함.
+
+#태그 이름
+docker tag phtoview-image asia.gcr.io/true-winter-322212/web-server-sample
+
+#이미지 업로드
+gcloud docker -- push asia.gcr.io/true-winter-322212/web-server-sample
+
+#이미지 삭제
+docker image rm asia.gcr.io/true-winter-322212/web-server-sample
+docker image rm photoview-image
+
+#이미지 다운로드
+gcloud docker -- pull asia.gcr.io/true-winter-322212/web-server-sample
+
+#작동 확인
+docker container run -d -p 80:80 asia.gcr.io/true-winter-322212/web-server-sample
+
