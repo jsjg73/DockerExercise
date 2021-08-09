@@ -1,0 +1,7 @@
+version: '3.3'
+
+services:
+        webserver:
+                build: . #피리어드로 커런트 디렉토리를 나타낸다.
+                command: echo 'hello'
+

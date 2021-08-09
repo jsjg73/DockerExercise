@@ -1,0 +1,15 @@
+(( 이미지 지정과 빌드의 차이 ))
+Compose 정의 파일에 이미지를 정의하는 방식은 두 가지
+
+services:
+  webserver:
+    image: ubuntu
+의 예제처럼 image를 직접 지정하는 방식.
+
+또는
+
+services:
+  webserver:
+    build : .
+의 예제처럼 커런트 디렉토리에 있는 Dockerfile을 자동으로 빌드하여
+베이스 이미지로 지정하는 방식.

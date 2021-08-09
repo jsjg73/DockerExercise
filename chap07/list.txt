@@ -1,3 +1,4 @@
+(( docker-compose.yml의 개요 ))
 <list 7.7> Compose 정의 파일의 예
 # 버전을 지정
 verion: '3.3'
@@ -19,3 +20,15 @@ networks:
 volumes:
   data-volume:
 ========================================================
+
+((이미지 빌드))
+<list 7.10> composeWithBuildSample/docker-compose.yml
+services:
+  webserver:
+    build: .
+
+<list 7.11> composeWithBuildSample/Dockerfile
+FROM ubuntu
+
+<list 7.12> container create
+docker-compose up --build
