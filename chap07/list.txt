@@ -1,0 +1,21 @@
+<list 7.7> Compose 정의 파일의 예
+# 버전을 지정
+verion: '3.3'
+
+#서비스 정의
+services:
+  webserver:
+    image: ubuntu
+    ports:
+      - "80:80"
+    networks:
+      - webnet
+
+#네트워크 정의
+networks:
+  webnet:
+
+#데이터 볼륨 정의
+volumes:
+  data-volume:
+========================================================
